@@ -22,10 +22,7 @@ require 'openssl'
 
 class Chef
   class Digester
-
-    def self.instance
-      @instance ||= new
-    end
+    include Singleton
 
     def self.checksum_for_file(*args)
       instance.checksum_for_file(*args)
